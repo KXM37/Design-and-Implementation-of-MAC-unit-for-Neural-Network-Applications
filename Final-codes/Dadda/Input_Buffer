@@ -1,0 +1,15 @@
+module Input_Buffer (Clk,Rst,In,Out); 
+  input Clk,Rst; 
+  input [7:0]In;
+  output [7:0]Out; 
+  reg [7:0]Out; 
+ 
+  always @(posedge Clk) 
+    begin
+    if(Rst)
+	  Out=8'd0; 
+	  else
+	  Out = In; 
+    end 
+	
+endmodule
