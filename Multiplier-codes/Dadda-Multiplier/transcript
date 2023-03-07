@@ -1,0 +1,66 @@
+# Reading C:/altera/90/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile {D:/2. Online/Anarghya/Dadda Multiplier/Main Dadda Multiplier.v} 
+vlib work
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Main Dadda Multiplier.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Dadda_Multiplier
+# 
+# Top level modules:
+# 	Dadda_Multiplier
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Main Partial Product Generation.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Main_PP_Generation
+# 
+# Top level modules:
+# 	Main_PP_Generation
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Partial Product Generation.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Partial_Product_Generation
+# 
+# Top level modules:
+# 	Partial_Product_Generation
+vsim -gui work.Dadda_Multiplier
+# vsim -gui work.Dadda_Multiplier 
+# Loading work.Dadda_Multiplier
+# Loading work.Main_PP_Generation
+# Loading work.Partial_Product_Generation
+# ** Error: (vsim-3033) D:/2. Online/Anarghya/Dadda Multiplier/Main Dadda Multiplier.v(29): Instantiation of 'Adder_Block' failed. The design unit was not found.
+#         Region: /Dadda_Multiplier
+#         Searched libraries:
+#             D:\2. Online\Anarghya\Dadda Multiplier\work
+# Error loading design
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Adder Part.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Adder_Block
+# 
+# Top level modules:
+# 	Adder_Block
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Main Dadda Multiplier.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Dadda_Multiplier
+# 
+# Top level modules:
+# 	Dadda_Multiplier
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Main Partial Product Generation.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Main_PP_Generation
+# 
+# Top level modules:
+# 	Main_PP_Generation
+vlog -reportprogress 300 -work work {D:/2. Online/Anarghya/Dadda Multiplier/Partial Product Generation.v}
+# Model Technology ModelSim ALTERA vlog 6.4a Compiler 2008.08 Oct 22 2008
+# -- Compiling module Partial_Product_Generation
+# 
+# Top level modules:
+# 	Partial_Product_Generation
+vsim -gui work.Dadda_Multiplier
+# vsim -gui work.Dadda_Multiplier 
+# Loading work.Dadda_Multiplier
+# Loading work.Main_PP_Generation
+# Loading work.Partial_Product_Generation
+# Loading work.Adder_Block
+add wave -r sim:/Dadda_Multiplier/*
+force -freeze sim:/Dadda_Multiplier/A 100110 0
+force -freeze sim:/Dadda_Multiplier/B 110101 0
+run
+run
