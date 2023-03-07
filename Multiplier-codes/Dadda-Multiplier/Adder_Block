@@ -1,0 +1,23 @@
+module Adder_Block (PP0,PP1,PP2,PP3,PP4,PP5,PP6,PP7,Product);
+  input [7:0]PP0,PP1,PP2,PP3,PP4,PP5,PP6,PP7;
+  output [15:0]Product;
+  wire [3:0]W0,W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12,W13;
+  
+  assign {W0,Product[0]}=PP0[0];
+  assign {W1,Product[1]}=PP0[1]+PP1[0]+W0;
+  assign {W2,Product[2]}=PP0[2]+PP1[1]+PP2[0]+W1;
+  assign {W3,Product[3]}=PP0[3]+PP1[2]+PP2[1]+PP3[0]+W2;
+  assign {W4,Product[4]}=PP0[4]+PP1[3]+PP2[2]+PP3[1]+PP4[0]+W3;
+  assign {W5,Product[5]}=PP0[5]+PP1[4]+PP2[3]+PP3[2]+PP4[1]+PP5[0]+W4;
+  assign {W6,Product[6]}=PP0[6]+PP1[5]+PP2[4]+PP3[3]+PP4[2]+PP5[1]+PP6[0]+W5;
+  assign {W7,Product[7]}=PP0[7]+PP1[6]+PP2[5]+PP3[4]+PP4[3]+PP5[2]+PP6[1]+PP7[0]+W6;
+  
+  assign {W8,Product[8]}=PP1[7]+PP2[6]+PP3[5]+PP4[4]+PP5[3]+PP6[2]+PP7[1]+W7;
+  assign {W9,Product[9]}=PP2[7]+PP3[6]+PP4[5]+PP5[4]+PP6[3]+PP7[2]+W8; 
+  assign {W10,Product[10]}=PP3[7]+PP4[6]+PP5[5]+PP6[4]+PP7[3]+W9;
+  assign {W11,Product[11]}=PP4[7]+PP5[6]+PP6[5]+PP7[4]+W10;
+  assign {W12,Product[12]}=PP5[7]+PP6[6]+PP7[5]+W11;
+  assign {W13,Product[13]}=PP6[7]+PP6[7]+W12;
+  assign {Product[15],Product[14]}=PP7[7]+W13;
+  
+endmodule
